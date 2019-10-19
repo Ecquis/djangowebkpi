@@ -21,6 +21,9 @@ h1 {
     background-color: #fff;
     box-shadow: 0 0 10px;
 }
+.table>thead>tr>th {
+    color: #fff;
+}
 .table thead {
     background-color: dimgrey;
 }

@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Department(models.Model):
-    # id = models.IntegerField(primary_key=True)
+    id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
@@ -13,7 +13,7 @@ class Department(models.Model):
 
 
 class Position(models.Model):
-    # id = models.IntegerField(primary_key=True)
+    id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=50)
 
     def __str__(self):
@@ -21,7 +21,7 @@ class Position(models.Model):
 
 
 class Employee(models.Model):
-    # id = models.IntegerField(primary_key=True)
+    id = models.IntegerField(primary_key=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     date_birth = models.DateField()

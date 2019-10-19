@@ -11,9 +11,12 @@
                     </thead>
                     <tbody>
                             <tr>
-                                {% for pos in positions %}
-                                    <td>{{ pos.id }}</td>
-                                    <td>{{ pos }}</td>
+                                {% for dep in departments %}
+                                    <td>{{ dep.id }}</td>
+                                    <td>{{ dep.name }}</td>
+                                    <td>{{ dep.city }}</td>
+                                    <td>{{ dep.address }}</td>
+                                    <td>{{ dep.phone }}</td>
                                 {% endfor %}
 
                             </tr>

@@ -20,4 +20,6 @@ from webkpi import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.positions, name='positions'),
+    path('', views.departments, name='departments'),
+    path('', views.employees, name='employees'),
 ]

@@ -1,44 +1,50 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Топ сайт для лаб</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 </head>
-<body>
-<header>
-    <nav class="header navbar navbar-default">
-        <div class="container">
-            <ul class="nav navbar-nav">
-                <!-- <li><a href="./employees.php">Сотрудники</a></li>
-                <li><a href="./index.php">Должности</a></li>
-                <li><a href="./departments.php">Отделы</a></li> -->
 
-            </ul>
-            <ul>
-                <h5>{{ name }}</h5>
-            </ul>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row container_logo">
-            <div class="col text-center">
-                <a href="./"><img src="{% static 'img/icon.png' %}" class="logo" alt="Logo"></a>
+<body>
+    <header>
+        <nav class="header navbar navbar-default">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li><a href="./employees">Сотрудники</a></li>
+                    <li><a href="./">Должности</a></li>
+                    <li><a href="./departments">Отделы</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./admin">Admin</a></li>
+                </ul>
+                <ul>
+                    <h5>{{ name }}</h5>
+                </ul>
+            </div>
+        </nav>
+            <div class="row container_logo">
+                <div class="col text-center">
+                    <a href="./"><img src="{% static 'img/icon.png' %}" class="logo" alt="Logo"></a>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
     {% block content %}
     {% endblock %}
-<footer class="container-wrapper">
-    <p class="text-center copyright">
-        © Copyright, tra ta ta. Project by <span title="Жук Олексій Євгенович">Zzzhuks</span>, <span title="Михайлова Діана Ігорівна">Dianka</span>, <span title="Кавун Федор Дмитрович">WaterMelon</span> and <span title="Бірюченко Олексій Вікторович">iTastyCake</span>.
-    </p>
-</footer>
+    <!-- <footer class="container-wrapper">
+        <p class="text-center copyright">
+            © Copyright, tra ta ta. Project by <span title="Жук Олексій Євгенович">Zzzhuks</span>, <span
+                title="Михайлова Діана Ігорівна">Dianka</span>, <span title="Кавун Федор Дмитрович">WaterMelon</span>
+            and <span title="Бірюченко Олексій Вікторович">iTastyCake</span>.
+        </p>
+    </footer> -->
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="{% static 'js/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
+
 </html>

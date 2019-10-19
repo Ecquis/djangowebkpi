@@ -20,8 +20,15 @@ from webkpi import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.positions, name='positions'),
+    path('positions', views.positions, name='positions'),
     path('departments', views.departments, name='departments'),
     path('employees', views.employees, name='employees'),
+    path('add_department/', views.add_department, name='add department'),
+    path('departments/add', views.form_department, name='form departments'),
+    path('add_employee/', views.add_employee, name='add employee'),
+    path('employees/add', views.form_employees, name='form employees'),
+    path('add_position/', views.add_position, name='add position'),
+    path('positions/add', views.form_positions, name='form positions'),
 ]
 
 

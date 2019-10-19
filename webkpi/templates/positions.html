@@ -1,22 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <table class="table">
-                    <thead>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1>Список должностей</h1>
+            <p><a href="./positions/add" class="pull-right"><i class="glyphicon glyphicon-plus"></i>Добавить
+                    должность</a></p>
+        </div>
+
+        <div class="col-sm-12">
+            <table class="table">
+                <thead>
                     <tr>
                         <th>№</th>
                         <th>Название</th>
                     </tr>
 
-                    </thead>
-                    <tbody>
-                            <tr>
-                                {% for pos in positions %}
-                                    <td>{{ pos.id }}</td>
-                                    <td>{{ pos }}</td>
-                                {% endfor %}
+                </thead>
+                <tbody>
 
-                            </tr>
-                    </tbody>
-                </table>
+                    {% for pos in positions %}
+                    <tr>
+                        <td>{{ pos.id }}</td>
+                        <td>{{ pos }}</td>
+                    </tr>
+                    {% endfor %}
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}

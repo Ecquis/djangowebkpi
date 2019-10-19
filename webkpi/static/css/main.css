@@ -1,0 +1,94 @@
+body {
+    background-image: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom center;
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+html {
+    height: 100%;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.table {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 10px;
+}
+.table thead {
+    background-color: dimgrey;
+}
+.table thead a {
+    color: #fff;
+}
+
+.pull-right {
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: green;
+    color: #fff;
+    box-shadow: 0 0 5px #000;
+    transition: .2s linear;
+}
+.pull-right i {
+    margin-right: 5px;
+}
+.pull-right:hover {
+    color: #fff;
+    background-color: darkgreen;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.glyphicon-remove {
+    color: darkred;
+}
+.glyphicon-pencil {
+    color: cadetblue;
+}
+
+.pagination li a{
+    transition: .2s linear;
+    background-color: dimgrey;
+    border: 0;
+    color: #fff;
+    margin: 0;
+    border-right: 1px solid #fff;
+}
+.pagination {
+    box-shadow: 0 0 5px;
+}
+.pagination li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+.pagination li:last-child a {
+    border-right: 0;
+}
+
+.btn {
+    transition: .2s linear;
+    border: 0 !important;
+    box-shadow: 0 0 5px;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.btn.btn-primary {
+    background-color: dimgrey;
+    color: #fff;
+    box-shadow: 0 0 5px #000;
+    margin-right: 10px;
+}
+.btn.btn-primary:hover {
+    background-color: #fff;
+    color: #000;
+}

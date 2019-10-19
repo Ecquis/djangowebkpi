@@ -2,3 +2,4 @@ django
 .idea/
 */__pycache__/*
 *.pyc
+*.sqlite3

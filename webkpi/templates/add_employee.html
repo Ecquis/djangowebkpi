@@ -1,7 +1,71 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Новая должность</h1>
-    <p>Название должности</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1>Новый сотрудник</h1>
+        </div>
+
+        <div class="col-sm-8 col-sm-offset-2">
+
+            <form action="/add_employee/" method="post">
+                {%csrf_token %}
+                <div class="form-group">
+                    <label>Имя</label>
+                    <input type="text" class="form-control" name="firstname" value="" />
+                </div>
+
+                <div class="form-group">
+                    <label>Фамилия</label>
+                    <input type="text" class="form-control" name="lastname" value="" />
+                </div>
+
+                <div class="form-group">
+                    <label>Дата рождения</label>
+                    <input type="date" class="form-control" name="birth" value="" />
+                </div>
+
+                <div class="form-group">
+                    <label>Дата приема на работу</label>
+                    <input type="date" class="form-control" name="employed" value="" />
+                </div>
+
+                <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="text" class="form-control" name="phone" value="" />
+                </div>
+
+                <div class="form-group">
+                    <label>Должность</label>
+                    <select class="form-control" name="postId">
+                        <option>Выберите должность...</option>
+
+                        {% for pos in positions %}
+                        <option value="{{ pos.id }}">{{ pos }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Отдел</label>
+                    <select class="form-control" name="departmentId">
+                        <option>Выберите отдел...</option>
+
+                        {% for dep in departments %}
+                        <option value="{{ dep.id }}">
+                            {{ dep }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                    <a href="./employees" class="btn btn-default">Отмена</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

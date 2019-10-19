@@ -1,7 +1,42 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Новая должность</h1>
-    <p>Название должности</p>
-
+<div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>Новый отдел</h1>
+            </div>
+    
+            <div class="col-sm-8 col-sm-offset-2">
+                
+                <form action="/add_department/" method="post">
+                    {%csrf_token %}
+                    <div class="form-group">
+                        <label>Название</label>
+                        <input type="text" class="form-control" name="name" value="" />
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Город</label>
+                        <input type="text" class="form-control" name="city" value="" />
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Адрес</label>
+                        <input type="text" class="form-control" name="address" value="" />
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="text" class="form-control" name="phone" value="" />
+                    </div>
+    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                        <a href="./departments" class="btn btn-default">Отмена</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

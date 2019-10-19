@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <table class="table">
-                    <thead>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1>Список сотрудников</h1>
+            <p><a href="./employees/add" class="pull-right"><i class="glyphicon glyphicon-plus"></i>Добавить
+                    сотрудника</a></p>
+        </div>
+
+        <div class="col-sm-12">
+            <table class="table">
+                <thead>
                     <tr>
                         <th>№</th>
                         <th>Имя</th>
@@ -14,21 +23,24 @@
                         <th>Отдел</th>
                     </tr>
 
-                    </thead>
-                    <tbody>
-                            <tr>
-                                {% for emp in employees %}
-                                    <td>{{ emp.id }}</td>
-                                    <td>{{ emp.first_name }}</td>
-                                    <td>{{ emp.last_name }}</td>
-                                    <td>{{ emp.date_birth }}</td>
-                                    <td>{{ emp.date_employment }}</td>
-                                    <td>{{ emp.phone }}</td>
-                                    <td>{{ emp.position }}</td>
-                                    <td>{{ emp.department }}</td>
-                                {% endfor %}
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for emp in employees %}
+                        <td>{{ emp.id }}</td>
+                        <td>{{ emp.first_name }}</td>
+                        <td>{{ emp.last_name }}</td>
+                        <td>{{ emp.date_birth }}</td>
+                        <td>{{ emp.date_employment }}</td>
+                        <td>{{ emp.phone }}</td>
+                        <td>{{ emp.position }}</td>
+                        <td>{{ emp.department }}</td>
+                        {% endfor %}
 
-                            </tr>
-                    </tbody>
-                </table>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}

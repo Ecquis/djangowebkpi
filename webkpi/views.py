@@ -4,7 +4,11 @@ from .models import Position, Department, Employee
 
 def positions(req):
     posits = Position.objects.all()
-    return render(req, './positions.html', {'positions': posits})
+    if req.user.is_authenticated:
+        name = 'Hello, ' + req.user.first_name + ' ' + req.user.last_name
+    else:
+        name = 'Anonymous'
+    return render(req, './positions.html', {'positions': posits, 'name': name})
 
 
 def departments(req):
@@ -15,3 +19,10 @@ def departments(req):
 def employees(req):
     empls = Employee.objects.all()
     return render(req, './employees.html', {'employees': empls})
+
+
+def register(req):
+    
+
+def register_user(req):
+

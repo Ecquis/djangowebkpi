@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from webkpi import views
 
 urlpatterns = [
@@ -22,4 +22,10 @@ urlpatterns = [
     path('', views.positions, name='positions'),
     path('departments', views.departments, name='departments'),
     path('employees', views.employees, name='employees'),
+]
+
+
+#Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    path('', include('django.contrib.auth.urls')),
 ]

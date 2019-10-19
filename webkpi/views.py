@@ -3,29 +3,36 @@ from django.shortcuts import redirect
 from .models import Position, Department, Employee
 
 
+def check_user(user):
+    if user.is_authenticated:
+        return user.first_name + ' ' + user.last_name
+    else:
+        return 'Anonymous'
+
+
 def positions(req):
     posits = Position.objects.all()
-    if req.user.is_authenticated:
-        name = 'Hello, ' + req.user.first_name + ' ' + req.user.last_name
-    else:
-        name = 'Anonymous'
+    name = check_user(req.user)
     return render(req, './positions.html', {'positions': posits, 'name': name})
 
 
 def departments(req):
     depts = Department.objects.all()
-    return render(req, './departments.html', {'departments': depts})
+    name = check_user(req.user)
+    return render(req, './departments.html', {'departments': depts, 'name': name})
 
 
 def employees(req):
     empls = Employee.objects.all()
-    return render(req, './employees.html', {'employees': empls})
+    name = check_user(req.user)
+    return render(req, './employees.html', {'employees': empls, 'name': name})
 
 
 def form_employees(req):
     depts = Department.objects.all()
     posits = Position.objects.all()
-    return render(req, './add_employee.html', {'departments': depts, 'positions': posits})
+    name = check_user(req.user)
+    return render(req, './add_employee.html', {'departments': depts, 'positions': posits, 'name': name})
 
 
 def form_department(req):

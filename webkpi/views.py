@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .models import Position
 
-# Create your views here.
+
+def positions(req):
+    pos = Position.objects.all()
+    return render(req, './positions.html', {'positions': pos})

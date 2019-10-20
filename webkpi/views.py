@@ -81,11 +81,3 @@ def add_employee(req):
         new_emp.save()
 
     return redirect("/employees")
-
-
-def register(req):
-    pass
-
-
-def register_user(req):
-    pass

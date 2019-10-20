@@ -25,19 +25,18 @@
 
                 </thead>
                 <tbody>
-                    <tr>
                         {% for emp in employees %}
-                        <td>{{ emp.id }}</td>
-                        <td>{{ emp.first_name }}</td>
-                        <td>{{ emp.last_name }}</td>
-                        <td>{{ emp.date_birth }}</td>
-                        <td>{{ emp.date_employment }}</td>
-                        <td>{{ emp.phone }}</td>
-                        <td>{{ emp.position }}</td>
-                        <td>{{ emp.department }}</td>
+                            <tr>
+                                <td>{{ emp.id }}</td>
+                                <td>{{ emp.first_name }}</td>
+                                <td>{{ emp.last_name }}</td>
+                                <td>{{ emp.date_birth }}</td>
+                                <td>{{ emp.date_employment }}</td>
+                                <td>{{ emp.phone }}</td>
+                                <td>{{ emp.position }}</td>
+                                <td>{{ emp.department }}</td>
+                            </tr>
                         {% endfor %}
-
-                    </tr>
                 </tbody>
             </table>
         </div>

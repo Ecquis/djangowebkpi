@@ -15,6 +15,9 @@
     position: absolute;
     width: 100%;
 }
+header {
+    overflow: hidden;
+}
 .header.navbar {
     background-color: dimgrey;
     border: 0;

@@ -6,7 +6,22 @@
         <div class="col-sm-12 text-center">
             <h1>Новый сотрудник</h1>
         </div>
-
+        {% if errors %}
+            <div class="error" align="center">
+            {% if 'empty' in errors %}
+                <label>Пожалуйста, заполните все поля.</label>
+                <br/>
+            {% endif %}
+            {% if 'models' in errors %}
+                <label>Пожалуйста, выберите должность и отдел.</label>
+                <br/>
+            {% endif %}
+            {% if 'dates' in errors %}
+                <label>Пожалуйста, введите корректные даты.</label>
+                <br/>
+            {% endif %}
+            </div>
+        {% endif %}
         <div class="col-sm-8 col-sm-offset-2">
 
             <form action="/add_employee/" method="post">

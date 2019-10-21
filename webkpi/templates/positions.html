@@ -5,8 +5,10 @@
     <div class="row">
         <div class="col-sm-12 text-center">
             <h1>Список должностей</h1>
-            <p><a href="/positions/add" class="pull-right"><i class="glyphicon glyphicon-plus"></i>Добавить
-                    должность</a></p>
+            {% if user.is_authenticated %}
+                <p><a href="/positions/add" class="pull-right"><i class="glyphicon glyphicon-plus"></i>Добавить
+                        должность</a></p>
+            {% endif %}
         </div>
 
         <div class="col-sm-12">

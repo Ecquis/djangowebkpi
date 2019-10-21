@@ -6,7 +6,15 @@
             <div class="col-sm-12 text-center">
                 <h1>Новый отдел</h1>
             </div>
-    
+            {% if errors %}
+                <div class="error" align="center">
+                    {% if 'empty' in errors %}
+                        <label>Пожалуйста, заполните все поля.</label>
+                        <br/>
+                    {% endif %}
+                </div>
+            {% endif %}
+
             <div class="col-sm-8 col-sm-offset-2">
                 
                 <form action="/add_department/" method="post">

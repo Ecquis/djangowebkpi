@@ -32,15 +32,15 @@ def form_employees(req):
     depts = Department.objects.all()
     posits = Position.objects.all()
     name = check_user(req.user)
-    return render(req, './add_employee.html', {'departments': depts, 'positions': posits, 'name': name})
+    return render(req, 'add_employee.html', {'departments': depts, 'positions': posits, 'name': name})
 
 
 def form_department(req):
-    return render(req, './add_department.html', {})
+    return render(req, 'add_department.html', {})
 
 
 def form_positions(req):
-    return render(req, './add_position.html', {})
+    return render(req, 'add_position.html', {})
 
 
 def add_position(req):
@@ -101,8 +101,8 @@ def add_employee(req):
             new_emp.date_birth = req.POST['birth']
             new_emp.date_employment = req.POST['employed']
             new_emp.phone = req.POST['phone']
-            new_emp.position = Position.objects.get(id__exact = int(req.POST['postId']))
-            new_emp.department = Department.objects.get(id__exact = int(req.POST['departmentId']))
+            new_emp.position = Position.objects.get(id__exact=int(req.POST['postId']))
+            new_emp.department = Department.objects.get(id__exact=int(req.POST['departmentId']))
             new_emp.save()
         except Exception as e:
             if e.__class__ == ValidationError:
@@ -112,3 +112,21 @@ def add_employee(req):
                                                        'departments': depts, 'positions': posits, 'name': name})
 
     return redirect("/employees")
+
+
+def del_position(req, id):
+    position = Position.objects.get(id__exact=id)
+    position.delete()
+    return redirect('/positions')
+
+
+def del_department(req, id):
+    employee = Department.objects.get(id__exact=id)
+    employee.delete()
+    return redirect('/departments')
+
+
+def del_employee(req, id):
+    employee = Employee.objects.get(id__exact=d)
+    employee.delete()
+    return redirect('/employees')

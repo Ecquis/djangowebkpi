@@ -32,6 +32,7 @@
                         <td>{{ dep.city }}</td>
                         <td>{{ dep.address }}</td>
                         <td>{{ dep.phone }}</td>
+                        <td><a class="btn btn-default" href="{% url 'del_department' id=dep.id %}"><span class="glyphicon glyphicon-remove"></span></a></td>
                     </tr>
                     {% endfor %}
 

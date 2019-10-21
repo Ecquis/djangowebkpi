@@ -29,6 +29,9 @@ urlpatterns = [
     path('employees/add', views.form_employees, name='form employees'),
     path('add_position/', views.add_position, name='add position'),
     path('positions/add', views.form_positions, name='form positions'),
+    path('del_position/<id>', views.del_position, name='del_position'),
+    path('del_department/<id>', views.del_department, name='del_department'),
+    path('del_employee/<id>', views.del_employee, name='del_employee'),
 ]
 
 

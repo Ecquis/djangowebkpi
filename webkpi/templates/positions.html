@@ -25,7 +25,8 @@
                     {% for pos in positions %}
                     <tr>
                         <td>{{ pos.id }}</td>
-                        <td>{{ pos }}</td>
+                        <td>{{ pos }} <a class="btn btn-default" href="{% url 'del_position' id=pos.id %}"><span class="glyphicon glyphicon-remove"></span></a></td>
+
                     </tr>
                     {% endfor %}
 

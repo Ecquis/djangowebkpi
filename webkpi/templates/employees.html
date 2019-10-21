@@ -37,6 +37,7 @@
                                 <td>{{ emp.phone }}</td>
                                 <td>{{ emp.position }}</td>
                                 <td>{{ emp.department }}</td>
+                                <td><a class="btn btn-default" href="{% url 'del_employee' id=emp.id %}"><span class="glyphicon glyphicon-remove"></span></a></td>
                             </tr>
                         {% endfor %}
                 </tbody>

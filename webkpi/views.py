@@ -127,6 +127,6 @@ def del_department(req, id):
 
 
 def del_employee(req, id):
-    employee = Employee.objects.get(id__exact=d)
+    employee = Employee.objects.get(id__exact=id)
     employee.delete()
     return redirect('/employees')
